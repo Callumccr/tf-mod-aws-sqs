@@ -28,7 +28,7 @@ resource "aws_sqs_queue_policy" "sqs_allow_all" {
     {
       "Sid": "First",
       "Effect": "Allow",
-      "Principal": [ ${length(var.sqs_policy_principal) > 0} ? ${element(var.sqs_policy_principal, 0)} : "*" ]
+      "Principal": [ ${length(list(var.sqs_policy_principal)) > 0 ? element(var.sqs_policy_principal, 0)} : "*" ]
       "Action": "sqs:*",
       "Resource": "${element(aws_sqs_queue.default.*.arn, count.index)}"
     }
