@@ -1,6 +1,6 @@
 resource "aws_sqs_queue" "default" {
   count                       = var.enabled && length(var.queue_name) > 0 ? length(var.queue_name) : 0
-  name                        = "${format("%s%s%s", module.label.id, var.delimiter, element(var.name, count.index))}"
+  name                        = "${format("%s%s%s", module.label.id, var.delimiter, element(var.queue_name, count.index))}"
   visibility_timeout_seconds  = var.visibility_timeout_seconds
   message_retention_seconds   = var.message_retention_seconds
   max_message_size            = var.max_message_size
