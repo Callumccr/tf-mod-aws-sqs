@@ -47,7 +47,7 @@ variable "enabled" {
   default     = true
 }
 
-variable "name" {
+variable "queue_name" {
   description = "(Optional) - This is the human-readable name of the queue. If omitted, Terraform will assign a random name."
   type        = list(string)
   default     = []
@@ -131,42 +131,42 @@ variable "sqs_policy_principal" {
   default     = ["*"]
 }
 
-# # -----------------------------------------------------------------------------
-# # Variables: TF-MOD-LABEL
-# # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# Variables: TF-MOD-LABEL
+# -----------------------------------------------------------------------------
 
-# variable "namespace" {
-#   type        = string
-#   default     = ""
-#   description = "(Optional) - Namespace, which could be your abbreviated product team, e.g. 'rci', 'mi', 'hp', or 'core'"
-# }
+variable "namespace" {
+  type        = string
+  default     = ""
+  description = "(Optional) - Namespace, which could be your abbreviated product team, e.g. 'rci', 'mi', 'hp', or 'core'"
+}
 
-# variable "environment" {
-#   type        = string
-#   default     = ""
-#   description = "(Optional) - Environment, e.g. 'dev', 'qa', 'staging', 'prod'"
-# }
+variable "environment" {
+  type        = string
+  default     = ""
+  description = "(Optional) - Environment, e.g. 'dev', 'qa', 'staging', 'prod'"
+}
 
-# variable "name" {
-#   type        = string
-#   default     = ""
-#   description = "(Optional) - Solution name, e.g. 'vault', 'consul', 'keycloak', 'k8s', or 'baseline'"
-# }
+variable "name" {
+  type        = string
+  default     = ""
+  description = "(Optional) - Solution name, e.g. 'vault', 'consul', 'keycloak', 'k8s', or 'baseline'"
+}
 
-# variable "delimiter" {
-#   type        = string
-#   default     = "-"
-#   description = "(Optional) - Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes`"
-# }
+variable "delimiter" {
+  type        = string
+  default     = "-"
+  description = "(Optional) - Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes`"
+}
 
-# variable "attributes" {
-#   type        = list(string)
-#   default     = []
-#   description = "(Optional) - Additional attributes (e.g. `1`)"
-# }
+variable "attributes" {
+  type        = list(string)
+  default     = []
+  description = "(Optional) - Additional attributes (e.g. `1`)"
+}
 
-# variable "tags" {
-#   type        = map(string)
-#   default     = {}
-#   description = "(Optional) - Additional tags"
-# }
+variable "tags" {
+  type        = map(string)
+  default     = {}
+  description = "(Optional) - Additional tags"
+}
