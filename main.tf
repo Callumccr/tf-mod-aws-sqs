@@ -17,7 +17,7 @@ resource "aws_sqs_queue" "default" {
   tags = module.label.tags
 }
 
-resource "aws_sqs_queue_policy" "sqs_allow_all" {
+resource "aws_sqs_queue_policy" "default" {
   count     = var.enabled && length(var.queue_name) > 0 ? length(var.queue_name) : 0
   queue_url = element(aws_sqs_queue.default.*.id, count.index)
   policy    = <<POLICY

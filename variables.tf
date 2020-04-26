@@ -128,7 +128,7 @@ variable "kms_data_key_reuse_period_seconds" {
 variable "sqs_policy_principal" {
   description = "The Principal ARN to add to the SQS queue to allow SQS actions against the queue"
   type        = string
-  default     = "*"
+  default     = ""
 }
 
 # -----------------------------------------------------------------------------
