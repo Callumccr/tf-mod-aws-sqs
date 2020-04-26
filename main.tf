@@ -28,7 +28,7 @@ resource "aws_sqs_queue_policy" "default" {
     {
       "Sid": "First",
       "Effect": "Allow",
-      "Principal": "${var.sqs_policy_principal}"
+      "Principal": "${var.sqs_policy_principal}",
       "Action": "sqs:*",
       "Resource": "${element(aws_sqs_queue.default.*.arn, count.index)}"
     }
